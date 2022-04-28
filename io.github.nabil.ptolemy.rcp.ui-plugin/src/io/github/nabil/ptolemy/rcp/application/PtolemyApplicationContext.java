@@ -5,9 +5,12 @@ import java.io.File;
 import org.eclipse.equinox.app.IApplicationContext;
 
 import io.github.nabil.ptolemy.rcp.crypto.CryptoContext;
+import io.github.nabil.ptolemy.rcp.storage.StorageManager;
 
 public class PtolemyApplicationContext {
 
+	private String username;
+	private StorageManager storageManager;
 	private final File dbFile;
 	private final String loggerConfigFile;
 	private final IApplicationContext appContext;
@@ -28,12 +31,29 @@ public class PtolemyApplicationContext {
 		return this.dbFile;
 	}
 	
+
+	public String username() {
+		return this.username;
+	}
+	
+	public StorageManager storageManager() {
+		return this.storageManager;
+	}
+	
 	public void closeSplash() {
 		this.appContext.applicationRunning();
 	}
 
 	public void update(CryptoContext cryptoContext) {
 		this.cryptoContext = cryptoContext;
+	}
+
+	public void update(String username) {
+		this.username = username;
+	}
+	
+	public void update(StorageManager storageManager) {
+		this.storageManager = storageManager;
 	}
 
 	public CryptoContext cryptoContext() {

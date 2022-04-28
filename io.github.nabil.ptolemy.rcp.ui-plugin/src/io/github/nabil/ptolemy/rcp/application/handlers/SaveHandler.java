@@ -1,12 +1,17 @@
 package io.github.nabil.ptolemy.rcp.application.handlers;
 
+import javax.inject.Inject;
+
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 
-import io.github.nabil.ptolemy.rcp.application.PtolemyAppContext;
+import io.github.nabil.ptolemy.rcp.application.PtolemyApplicationContext;
 
 public class SaveHandler {
+
+	@Inject
+	private PtolemyApplicationContext ptolemyApplicationContext;
 
 	@CanExecute
 	public boolean canExecute(EPartService partService) {
@@ -15,7 +20,7 @@ public class SaveHandler {
 
 	@Execute
 	public void execute(EPartService partService) {
-		if (!PtolemyAppContext.saveDbFile()) {
+		if (!ptolemyApplicationContext.storageManager().saveDbFile()) {
 			throw new RuntimeException("Unable to save DB file");
 		}
 

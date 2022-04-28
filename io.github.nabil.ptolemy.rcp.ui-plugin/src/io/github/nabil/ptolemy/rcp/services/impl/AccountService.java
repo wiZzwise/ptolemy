@@ -4,9 +4,11 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.inject.Inject;
+
 import org.apache.commons.lang3.StringUtils;
 
-import io.github.nabil.ptolemy.rcp.application.PtolemyAppContext;
+import io.github.nabil.ptolemy.rcp.application.PtolemyApplicationContext;
 import io.github.nabil.ptolemy.rcp.crypto.EncryptEntityVisitor;
 import io.github.nabil.ptolemy.rcp.model.Account;
 import io.github.nabil.ptolemy.rcp.model.AccountID;
@@ -15,12 +17,12 @@ import io.github.nabil.ptolemy.rcp.storage.PtolemyDB;
 
 public class AccountService implements IAccountService {
 
-	private Map<AccountID, Account>	accounts;
+	private Map<AccountID, Account> accounts;
 
-	private PtolemyDB				ptolemyDb;
+	private PtolemyApplicationContext ptolemyApplicationContext;
 
-	public AccountService(PtolemyDB pDb) {
-		this.ptolemyDb = pDb;
+	public AccountService(PtolemyApplicationContext ptolemyApplicationContext) {
+		this.ptolemyApplicationContext = ptolemyApplicationContext;
 		this.loadData();
 	}
 
@@ -59,7 +61,7 @@ public class AccountService implements IAccountService {
 				account.setId(uuid());
 			}
 			if (!account.isCrypted()) {
-				EncryptEntityVisitor v = new EncryptEntityVisitor(PtolemyAppContext.getCryptoContext());
+				EncryptEntityVisitor v = new EncryptEntityVisitor(ptolemyApplicationContext.cryptoContext());
 				if (!account.accept(v)) {
 					throw new RuntimeException("Unable to save account");
 				}
@@ -75,13 +77,15 @@ public class AccountService implements IAccountService {
 	}
 
 	protected Map<AccountID, Account> loadData() {
-		if (ptolemyDb != null) {
+		PtolemyDB ptolemyDb = ptolemyApplicationContext.storageManager().getPtolemyDb();
+		if (ptolemyApplicationContext.storageManager().getPtolemyDb() != null) {
 			accounts = ptolemyDb.loadAccounts();
 		}
 		return accounts;
 	}
 
 	private boolean commit() {
+		PtolemyDB ptolemyDb = ptolemyApplicationContext.storageManager().getPtolemyDb();
 		if (ptolemyDb != null) {
 			return ptolemyDb.saveAccounts(accounts);
 		}

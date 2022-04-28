@@ -12,7 +12,7 @@ import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 
-import io.github.nabil.ptolemy.rcp.application.PtolemyAppContext;
+import io.github.nabil.ptolemy.rcp.application.PtolemyApplicationContext;
 import io.github.nabil.ptolemy.rcp.crypto.DecryptEntityVisitor;
 import io.github.nabil.ptolemy.rcp.dialogs.PasswordValidationDialog;
 import io.github.nabil.ptolemy.rcp.model.Account;
@@ -32,6 +32,9 @@ public class VerifyKeyHandler extends PtolemyUICommandHandler {
 
 	@Inject
 	private IEventBroker				_broker;
+	
+	@Inject
+	private PtolemyApplicationContext ptolemyApplicationContext;
 
 	private PasswordValidationDialog	passwdDialog;
 
@@ -97,7 +100,7 @@ public class VerifyKeyHandler extends PtolemyUICommandHandler {
 			Account tmp = new Account();
 			tmp.setSecret(account.getSecret());
 			tmp.setCrypted(true);
-			DecryptEntityVisitor v = new DecryptEntityVisitor(pass, PtolemyAppContext.getCryptoContext());
+			DecryptEntityVisitor v = new DecryptEntityVisitor(pass, ptolemyApplicationContext.cryptoContext());
 			tmp.accept(v);
 			return tmp;
 		} catch (Exception ex) {

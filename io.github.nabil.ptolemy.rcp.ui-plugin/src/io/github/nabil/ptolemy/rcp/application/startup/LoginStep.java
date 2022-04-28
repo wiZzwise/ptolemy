@@ -8,7 +8,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.github.nabil.ptolemy.rcp.application.PtolemyAppContext;
 import io.github.nabil.ptolemy.rcp.application.PtolemyApplicationContext;
 import io.github.nabil.ptolemy.rcp.dialogs.LoginDialog;
 
@@ -17,14 +16,16 @@ public class LoginStep extends SequenceStep {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Override
-	public boolean execute(PtolemyApplicationContext context) {
+	public boolean execute(PtolemyApplicationContext ptolemyApplicationContext) {
 
-		context.closeSplash();
+		ptolemyApplicationContext.closeSplash();
 
 		final Shell shell = new Shell(SWT.TOOL | SWT.NO_TRIM);		
 		final LoginDialog loginDialog = new LoginDialog(shell);
 
 		boolean quit = false;
+		boolean loginSucceeded = false;
+		
 		while (!quit) {
 			if (loginDialog.open() != Window.OK) {
 				logger.info("Cancel Called! Good bye...");
@@ -38,18 +39,23 @@ public class LoginStep extends SequenceStep {
 				throw new StartupSequenceException("No Username or Password were provided");
 			} else {
 				try {
-					PtolemyAppContext.init(username, passwd);
+					ptolemyApplicationContext.update(username);
+					loginSucceeded = ptolemyApplicationContext.cryptoContext().init(username, passwd);
 				} catch (Exception ie) {
 					logger.error(ie.getMessage(), ie);
 					loginDialog.create();
-					loginDialog.setMessage("Unable to open db: " + ie.getMessage(), IMessageProvider.ERROR);
+					loginDialog.setMessage("Unable to verify user again default database: " + ie.getMessage(), IMessageProvider.ERROR);
 					continue;
 				}
 				loginDialog.close();
 				quit = true;
 			}
 		}
+		
+		if(!loginSucceeded) {
+			return false;
+		}
 
-		return nextStep(context);
+		return nextStep(ptolemyApplicationContext);
 	}
 }

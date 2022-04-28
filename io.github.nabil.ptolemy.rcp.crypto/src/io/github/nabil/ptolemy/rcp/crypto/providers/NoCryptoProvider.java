@@ -20,12 +20,12 @@ public class NoCryptoProvider extends CryptoProvider {
 
 	@Override
 	public String encrypt(String plainText) throws EncryptionException {
-		return null;
+		return plainText;
 	}
 
 	@Override
 	public String decrypt(String encryptedValue, String pass) throws DecryptionException {
-		return null;
+		return encryptedValue;
 	}
 
 	@Override

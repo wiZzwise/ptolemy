@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
-import io.github.nabil.ptolemy.rcp.application.PtolemyAppContext;
+import io.github.nabil.ptolemy.rcp.application.PtolemyApplicationContext;
 import io.github.nabil.ptolemy.rcp.application.handlers.PtolemyUICommandHandler;
 import io.github.nabil.ptolemy.rcp.crypto.EncryptEntityVisitor;
 import io.github.nabil.ptolemy.rcp.model.Account;
@@ -69,6 +69,9 @@ public class DetailsPart extends PtolemyUICommandHandler {
 
 	@Inject
 	private IAccountService	accountService;
+	
+	@Inject
+	private PtolemyApplicationContext ptolemyApplicationContext;
 
 	public void buildAccountComposite() {
 
@@ -188,7 +191,7 @@ public class DetailsPart extends PtolemyUICommandHandler {
 			modAccount.setCrypted(currentAccount.isCrypted());
 			if (currentAccount != null && !StringUtils.equals(se, currentAccount.getSecret())) {
 				modAccount.setCrypted(false);
-				EncryptEntityVisitor v = new EncryptEntityVisitor(PtolemyAppContext.getCryptoContext());
+				EncryptEntityVisitor v = new EncryptEntityVisitor(ptolemyApplicationContext.cryptoContext());
 				if (!modAccount.accept(v)) {
 					throw new RuntimeException("Unable to save account");
 				}

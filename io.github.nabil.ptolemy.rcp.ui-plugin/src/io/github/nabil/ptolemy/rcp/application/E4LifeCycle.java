@@ -25,7 +25,6 @@ import io.github.nabil.ptolemy.rcp.application.startup.StartupSequence;
 import io.github.nabil.ptolemy.rcp.providers.AccountDataContentProvider;
 import io.github.nabil.ptolemy.rcp.services.IAccountService;
 import io.github.nabil.ptolemy.rcp.services.impl.AccountService;
-import io.github.nabil.ptolemy.rcp.storage.PtolemyDB;
 
 /**
  * This is the implementation containing e4 LifeCycle annotated methods.<br />
@@ -64,7 +63,7 @@ public class E4LifeCycle {
 			IEclipseContext workbenchContext) {
 		logger.debug("postContextCreate called.");
 
-		PtolemyApplicationContext ptolemyAppContext = new PtolemyApplicationContext.Builder()
+		PtolemyApplicationContext ptolemyApplicationContext = new PtolemyApplicationContext.Builder()
 				.withIApplicationContext(appContext)
 				.withLoggerConfigFile(LOGBACK_CONFIG_FILE)
 				.withDbFile(DB_FILE)
@@ -76,21 +75,19 @@ public class E4LifeCycle {
 				.with(new CryptoContextInitialisationStep())
 				.with(new LoginStep())
 				.with(new OpenDatabaseStep())
-				.build(ptolemyAppContext);
-		
+				.build(ptolemyApplicationContext);
+
 		ptolemyStartupSequence.run();
 
-		PtolemyDB pDb = PtolemyAppContext.getPtolemyDb();
-		workbenchContext.set(PtolemyDB.class.getName(), pDb);
-		logRegistration(PtolemyDB.class);
+		workbenchContext.set(PtolemyApplicationContext.class.getName(), ptolemyApplicationContext);
+		logRegistration(PtolemyApplicationContext.class);
 
-		IAccountService iAccountService = new AccountService(pDb);
-
-		workbenchContext.set(IAccountService.class.getName(), iAccountService);
+		AccountService accountService =  new AccountService(ptolemyApplicationContext);
+		workbenchContext.set(IAccountService.class.getName(), accountService);
 		logRegistration(IAccountService.class);
 
 		AccountDataContentProvider accountDataContentProvider = AccountDataContentProvider.getInstance();
-		accountDataContentProvider.init(iAccountService);
+		accountDataContentProvider.init(accountService);
 		
 		workbenchContext.set(AccountDataContentProvider.class.getName(), accountDataContentProvider);
 		logRegistration(AccountDataContentProvider.class);

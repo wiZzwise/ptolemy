@@ -39,13 +39,12 @@ import org.eclipse.swt.widgets.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.github.nabil.ptolemy.rcp.application.PtolemyAppContext;
+import io.github.nabil.ptolemy.rcp.application.PtolemyApplicationContext;
 import io.github.nabil.ptolemy.rcp.application.handlers.PtolemyUICommandHandler;
 import io.github.nabil.ptolemy.rcp.filters.AccountFilter;
 import io.github.nabil.ptolemy.rcp.model.Account;
 import io.github.nabil.ptolemy.rcp.model.IUIModelConstants;
 import io.github.nabil.ptolemy.rcp.providers.AccountDataContentProvider;
-import io.github.nabil.ptolemy.rcp.services.IAccountService;
 
 /**
  * List of accounts
@@ -78,6 +77,9 @@ public class KeysPart extends PtolemyUICommandHandler {
 	private Account			focusedAccount;
 
 	private AccountFilter	filter;
+
+	@Inject
+	private PtolemyApplicationContext ptolemyApplicationContext;
 
 	@Inject
 	private AccountDataContentProvider	accountDataContentProvider;
@@ -195,7 +197,7 @@ public class KeysPart extends PtolemyUICommandHandler {
 	}
 
 	public void updateViewer() {
-		_dirty.setDirty(PtolemyAppContext.isCurrentDbDirty());
+		_dirty.setDirty(ptolemyApplicationContext.storageManager().isCurrentDbDirty());
 		_keysViewer.refresh();
 	}
 
