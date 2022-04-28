@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="RCP_Application.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="RCP_Application.window.main" selectedElement="_QO3eELgaEeagb7LIAxanPA" label="Ptolemy Application" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/alt_windows_256.gif" tooltip="Tools for Coders" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ" x="50" y="50" width="800" height="800">
+    <children xsi:type="basic:PartSashContainer" xmi:id="_QO3eELgaEeagb7LIAxanPA" elementId="io.github.nabil.ptolemy.rcp.partsashcontainer.main" containerData="" selectedElement="_WiSj8LgaEeagb7LIAxanPA" horizontal="true">
+      <children xsi:type="basic:PartStack" xmi:id="_WiSj8LgaEeagb7LIAxanPA" elementId="io.github.nabil.ptolemy.rcp.partstack.0" containerData="12000" selectedElement="_abK6ALgaEeagb7LIAxanPA">
+        <children xsi:type="basic:Part" xmi:id="_abK6ALgaEeagb7LIAxanPA" elementId="io.github.nabil.ptolemy.rcp.part.keys" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.parts.KeysPart" label="Keys">
+          <menus xmi:id="_nm3LsNqqEeaExOrQPaBXDg" elementId="io.github.nabil.ptolemy.rcp.menu.0"/>
+          <menus xmi:id="_qRXAEO5TEea3qpPFvmJrxg" elementId="io.github.nabil.ptolemy.menu.tablemenu" label="Table Menu">
+            <tags>ViewMenu</tags>
+            <children xsi:type="menu:HandledMenuItem" xmi:id="_wpQWQO5TEea3qpPFvmJrxg" elementId="io.github.nabil.ptolemy.handledmenuitem.0" label="List View" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/application/application_view_list.png" command="_QWosgO-dEeaYmLqFQN6f_A"/>
+            <children xsi:type="menu:HandledMenuItem" xmi:id="_NP-MUEZqEeeoXvHvOAtZUA" elementId="io.github.nabil.ptolemy.handledmenuitem.0" label="Tile View" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/application/application_view_tile.png" command="_QWosgO-dEeaYmLqFQN6f_A"/>
+          </menus>
+          <menus xsi:type="menu:PopupMenu" xmi:id="_P7ZewPBdEeaS6fZ7sns8Kw" elementId="io.github.nabil.ptolemy.menu.popupmenu.0">
+            <children xsi:type="menu:HandledMenuItem" xmi:id="_T_Hy4PBdEeaS6fZ7sns8Kw" elementId="io.github.nabil.ptolemy.handledmenuitem.editAccount" label="Edit" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/account/book_edit.png" tooltip="Edit Account" mnemonics="" command="_wdjbYPCqEeawXuy1p15Azw"/>
+            <children xsi:type="menu:MenuSeparator" xmi:id="_WW2aYPF9EeaFeN287PojSQ" elementId="ptolemy.menuseparator.1"/>
+            <children xsi:type="menu:HandledMenuItem" xmi:id="_W0xFcPF9EeaFeN287PojSQ" elementId="io.github.nabil.ptolemy.handledmenuitem.copyToClipboard" label="Copy Secret to Clipboard" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/account/bullet_key.png" command="__ajy4PF-EeaFeN287PojSQ"/>
+          </menus>
+        </children>
+      </children>
+      <children xsi:type="basic:PartSashContainer" xmi:id="_cuV2gLgaEeagb7LIAxanPA" elementId="io.github.nabil.ptolemy.rcp.partsashcontainer.0" containerData="6000">
+        <children xsi:type="basic:PartStack" xmi:id="_dryWMLgaEeagb7LIAxanPA" elementId="io.github.nabil.ptolemy.rcp.partstack.1">
+          <children xsi:type="basic:Part" xmi:id="_fDS7sLgaEeagb7LIAxanPA" elementId="io.github.nabil.ptolemy.rcp.part.details" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.parts.DetailsPart" label="Details" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
+            <toolbar xmi:id="_W44gkNqsEeaExOrQPaBXDg" elementId="io.github.nabil.ptolemy.rcp.toolbar.1"/>
+          </children>
+        </children>
+        <children xsi:type="basic:PartStack" xmi:id="_ejrngLgaEeagb7LIAxanPA" elementId="io.github.nabil.ptolemy.rcp.partstack.2">
+          <children xsi:type="basic:Part" xmi:id="_glhjcLgaEeagb7LIAxanPA" elementId="io.github.nabil.ptolemy.rcp.part.playground" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.parts.PlaygroundPart" label="Description">
+            <toolbar xmi:id="_WeK6gNqsEeaExOrQPaBXDg" elementId="io.github.nabil.ptolemy.rcp.toolbar.0"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_6wlLicgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_6wlLisgZEeSyMNYR5xypkQ" elementId="file" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLi8gZEeSyMNYR5xypkQ" elementId="RCP_Application.handleditem.file.open" label="Import Database" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/application/database_key.png" tooltip="Import Database" mnemonics="" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLjMgZEeSyMNYR5xypkQ" elementId="RCP_Application.handleditem.save" label="Save" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/application/disk.png" tooltip="Save" mnemonics="" command="_6wlLg8gZEeSyMNYR5xypkQ"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_pheQsO5SEea3qpPFvmJrxg" elementId="ptolemy.menuseparator.0"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_-Bn7AO5SEea3qpPFvmJrxg" elementId="RCP_Application.handleditem.settings" label="Settings" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/application/cog_edit.png" tooltip="Settings" mnemonics="" command="_1-dD8O2QEea3qpPFvmJrxg"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLjcgZEeSyMNYR5xypkQ" elementId="RCP_Application.handleditem.quit" label="Quit" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/application/monitor_go.png" tooltip="Quit" command="_6wlLfMgZEeSyMNYR5xypkQ"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_K2GAUEZpEeeoXvHvOAtZUA" elementId="accounts" label="Accounts">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_K2GAUkZpEeeoXvHvOAtZUA" elementId="RCP_Application.handleditem.save" label="New Account" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/account/book_add.png" tooltip="New Account" mnemonics="" command="_QWosgO-dEeaYmLqFQN6f_A"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_6wlLjsgZEeSyMNYR5xypkQ" elementId="help" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_6wlLj8gZEeSyMNYR5xypkQ" elementId="RCP_Application.handleditem.about" label="About" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/application/group.png" tooltip="About" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
+      </children>
+    </mainMenu>
+    <trimBars xmi:id="_6wlLlcgZEeSyMNYR5xypkQ" elementId="RCP_Application.trimbar.top">
+      <children xsi:type="menu:ToolBar" xmi:id="_6wlLlsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_6wlLl8gZEeSyMNYR5xypkQ" elementId="RCP_Application.handleditem.trimbar.top.open" label="Import Database" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/application/database_key.png" tooltip="Import Database" command="_1-dD8O2QEea3qpPFvmJrxg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_6wlLmMgZEeSyMNYR5xypkQ" elementId="RCP_Application.handleditem.trimbar.top.save" label="Save" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/application/disk.png" tooltip="Save" command="_6wlLg8gZEeSyMNYR5xypkQ"/>
+        <children xsi:type="menu:ToolBarSeparator" xmi:id="_s_oWEAtQEeeoKdz5VbJdBg" elementId="ptolemy.toolbarseparator.0"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_QLqXsO2REea3qpPFvmJrxg" elementId="RCP_Application.handleditem.trimbar.top.newaccount" label="New Account" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/account/book_add.png" tooltip="New Account" command="_B51soOADEea3UrUpslRtRw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_toeewAtQEeeoKdz5VbJdBg" elementId="RCP_Application.handleditem.trimbar.top.delete" label="Delete Account" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/account/book_delete.png" tooltip="Delete Account" command="_dvE9IAtQEeeoKdz5VbJdBg"/>
+      </children>
+    </trimBars>
+  </children>
+  <handlers xmi:id="_6wlLfcgZEeSyMNYR5xypkQ" elementId="io.github.nabil.ptolemy.handlers.quitCommand" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.QuitHandler" command="_6wlLfMgZEeSyMNYR5xypkQ"/>
+  <handlers xmi:id="_6wlLgcgZEeSyMNYR5xypkQ" elementId="io.github.nabil.ptolemy.handlers.openCommand" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.OpenHandler" command="_6wlLgMgZEeSyMNYR5xypkQ"/>
+  <handlers xmi:id="_6wlLhMgZEeSyMNYR5xypkQ" elementId="io.github.nabil.ptolemy.handlers.saveCommand" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.SaveHandler" command="_6wlLg8gZEeSyMNYR5xypkQ"/>
+  <handlers xmi:id="_6wlLh8gZEeSyMNYR5xypkQ" elementId="io.github.nabil.ptolemy.handlers.aboutCommand" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.AboutHandler" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
+  <handlers xmi:id="_XLN_kOADEea3UrUpslRtRw" elementId="io.github.nabil.ptolemy.handlers.account.create" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.AccountHandler" command="_QWosgO-dEeaYmLqFQN6f_A"/>
+  <handlers xmi:id="_a1FpQOADEea3UrUpslRtRw" elementId="io.github.nabil.ptolemy.handlers.saveallhandler" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.SaveAllHandler" command="_L5KcgOADEea3UrUpslRtRw"/>
+  <handlers xmi:id="_6sMlcO2QEea3qpPFvmJrxg" elementId="io.github.nabil.ptolemy.handlers.loginhandler" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.LoginHandler" command="_1-dD8O2QEea3qpPFvmJrxg"/>
+  <handlers xmi:id="_tKwYIO-dEeaYmLqFQN6f_A" elementId="io.github.nabil.ptolemy.handlers.account.edit" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.AccountHandler" command="_B51soOADEea3UrUpslRtRw"/>
+  <handlers xmi:id="_52cdYPCqEeawXuy1p15Azw" elementId="io.github.nabil.ptolemy.handlers.account.showSelected" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.ShowSelectedAccountHandler" command="_wdjbYPCqEeawXuy1p15Azw"/>
+  <handlers xmi:id="_C5NrEPF_EeaFeN287PojSQ" elementId="io.github.nabil.ptolemy.handlers.account.copyToClipboard" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.CopyToClipboardHandler" command="__ajy4PF-EeaFeN287PojSQ"/>
+  <handlers xmi:id="_ONvP8PPHEeaFeN287PojSQ" elementId="io.github.nabil.ptolemy.handlers.security.verifykey" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.VerifyKeyHandler" command="_JGhegPPHEeaFeN287PojSQ"/>
+  <handlers xmi:id="_XC6nIAtQEeeoKdz5VbJdBg" elementId="io.github.nabil.ptolemy.handlers.account.delete" contributionURI="bundleclass://io.github.nabil.ptolemy.rcp.ui-plugin/io.github.nabil.ptolemy.rcp.application.handlers.RemoveAccountHandler" command="_dvE9IAtQEeeoKdz5VbJdBg"/>
+  <bindingTables xmi:id="_6wlLfsgZEeSyMNYR5xypkQ" elementId="RCP_Application.bindingtable" bindingContext="_6wlLecgZEeSyMNYR5xypkQ">
+    <bindings xmi:id="_6wlLf8gZEeSyMNYR5xypkQ" elementId="io.github.nabil.ptolemy.rcp.keybinding.m1q" keySequence="M1+Q" command="_6wlLfMgZEeSyMNYR5xypkQ">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_6wlLgsgZEeSyMNYR5xypkQ" elementId="io.github.nabil.ptolemy.rcp.keybinding.m1o" keySequence="M1+O" command="_6wlLgMgZEeSyMNYR5xypkQ">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_6wlLhcgZEeSyMNYR5xypkQ" elementId="io.github.nabil.ptolemy.rcp.keybinding.m1s" keySequence="M1+S" command="_6wlLg8gZEeSyMNYR5xypkQ">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_3xUnYO2eEea3qpPFvmJrxg" elementId="io.github.nabil.ptolemy.rcp.keybinding.account.add" keySequence="M1+N" command="_QWosgO-dEeaYmLqFQN6f_A">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_p4KQMPC0EeawXuy1p15Azw" elementId="io.github.nabil.ptolemy.rcp.keybinding.account.showSelected" keySequence="M1+E" command="_wdjbYPCqEeawXuy1p15Azw">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_Jq4zMPF_EeaFeN287PojSQ" elementId="io.github.nabil.ptolemy.rcp.keybinding.account.copyToClipboard" keySequence="M1+K" command="__ajy4PF-EeaFeN287PojSQ">
+      <tags>type:user</tags>
+    </bindings>
+  </bindingTables>
+  <rootContext xmi:id="_6wlLecgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows"/>
+  <menuContributions xmi:id="_WUmgEPCrEeawXuy1p15Azw" elementId="popup:io.github.nabil.ptolemy.rcp.part.keys">
+    <children xsi:type="menu:HandledMenuItem" xmi:id="_gOsxsPCrEeawXuy1p15Azw" elementId="io.github.nabil.ptolemy.menus.items.oneitem" label="Edit" iconURI="platform:/plugin/io.github.nabil.ptolemy.rcp.ui-plugin/icons/account/book_edit.png" command="_wdjbYPCqEeawXuy1p15Azw"/>
+  </menuContributions>
+  <commands xmi:id="_6wlLfMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
+  <commands xmi:id="_6wlLgMgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.open" commandName="openCommand"/>
+  <commands xmi:id="_6wlLg8gZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_B51soOADEea3UrUpslRtRw" elementId="io.github.nabil.ptolemy.commands.account.edit" commandName="editAccountCommand">
+    <parameters xmi:id="_OsG88PBkEeaS6fZ7sns8Kw" elementId="io.github.nabil.ptolemy.commands.parameters.account.id" name="Account ID"/>
+  </commands>
+  <commands xmi:id="_L5KcgOADEea3UrUpslRtRw" elementId="org.eclipse.ui.file.saveAll" commandName="saveAllCommand"/>
+  <commands xmi:id="_6wlLhsgZEeSyMNYR5xypkQ" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="_1-dD8O2QEea3qpPFvmJrxg" elementId="io.github.nabil.ptolemy.command.login" commandName="loginCommand"/>
+  <commands xmi:id="_QWosgO-dEeaYmLqFQN6f_A" elementId="io.github.nabil.ptolemy.commands.account.create" commandName="createAccountCommand"/>
+  <commands xmi:id="_wdjbYPCqEeawXuy1p15Azw" elementId="io.github.nabil.ptolemy.commands.account.showSelected" commandName="showSelectedCommand"/>
+  <commands xmi:id="__ajy4PF-EeaFeN287PojSQ" elementId="io.github.nabil.ptolemy.commands.account.copyToClipboard" commandName="copyToClipboardCommand"/>
+  <commands xmi:id="_JGhegPPHEeaFeN287PojSQ" elementId="io.github.nabil.ptolemy.commands.security.verifykey" commandName="verifyKeyCommand">
+    <parameters xmi:id="_dYm3oPPHEeaFeN287PojSQ" elementId="io.github.nabil.ptolemy.commands.parameters.account.id" name="Account ID"/>
+    <parameters xmi:id="_YxSisPPREeaFeN287PojSQ" elementId="io.github.nabil.ptolemy.commands.parameters.account.action" name="Action"/>
+  </commands>
+  <commands xmi:id="_dvE9IAtQEeeoKdz5VbJdBg" elementId="io.github.nabil.ptolemy.commands.account.delete" commandName="deleteAccountCommand">
+    <parameters xmi:id="_huh1QAtQEeeoKdz5VbJdBg" elementId="io.github.nabil.ptolemy.commands.parameters.account.id" name="Account ID"/>
+  </commands>
+  <addons xmi:id="_6wlLcsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_6wlLc8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_6wlLdMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_6wlLdcgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_6wlLdsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_6wlLd8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_6wlLeMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>

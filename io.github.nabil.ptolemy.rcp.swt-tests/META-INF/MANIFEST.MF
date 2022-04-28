@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SWTBot Tests Plugin
+Bundle-SymbolicName: io.github.nabil.ptolemy.rcp.swt-tests;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: 
+Require-Bundle: org.eclipse.swtbot.go,
+ org.eclipse.swtbot.e4.finder;bundle-version="3.1.0",
+ io.github.nabil.ptolemy.rcp.mvn-dependencies;bundle-version="1.0.0"
+Automatic-Module-Name: io.github.nabil.ptolemy.rcp.swt.tests

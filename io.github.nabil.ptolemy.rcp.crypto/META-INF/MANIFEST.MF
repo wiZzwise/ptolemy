@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: crypto
+Bundle-SymbolicName: io.github.nabil.ptolemy.rcp.crypto
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: io.github.nabil
+Automatic-Module-Name: crypto
+require-bundle: org.slf4j.api;bundle-version="1.7.30",
+ io.github.nabil.ptolemy.rcp.mvn-dependencies;bundle-version="1.0.0",
+ org.bouncycastle.bcpg;bundle-version="1.70.0"
+Bundle-ClassPath: .
+Export-Package: io.github.nabil.ptolemy.rcp.crypto;uses:="org.slf4j",
+ io.github.nabil.ptolemy.rcp.crypto.exception
